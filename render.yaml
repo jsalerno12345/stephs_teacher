@@ -1,9 +1,19 @@
 services:
   - type: web
     name: stephs-teacher-site
-    env: ruby
+    env: docker
     plan: free
-    buildCommand: |
-      apt-get update -qq && apt-get install -y libpq-dev
-      bundle install && bundle exec rake assets:precompile
-    startCommand: bundle exec rails server
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: RAILS_ENV
+        value: production
+      - key: SECRET_KEY_BASE
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: stephs-teacher-db
+          property: connectionString
+
+databases:
+  - name: stephs-teacher-db
+    plan: free
