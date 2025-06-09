@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="min-vh-100 py-5" style="background-color: #fff9f0;"> <!-- pastel cream -->
+        <div class="container text-center">
+          <%= image_tag("paw-print.svg", alt: "Classroom Logo", class: "mb-4", style: "max-width: 100px;") %>
+      
+          <h1 class="display-5 fw-semibold text-secondary">Hello, Sunshine! ☀️</h1>
+          <p class="lead text-muted">Welcome to a place full of laughter, learning, and little paw prints.</p>
+      
+          <div class="my-5 row justify-content-center">
+            <div class="col-md-4 mb-4">
+              <div class="card shadow-sm h-100 border-0">
+                <div class="card-body">
+                  <h5 class="card-title">📚 About Our Class</h5>
+                  <p class="card-text">Get to know our classroom philosophy, daily routines, and what makes second grade so special.</p>
+                  <%= link_to "Learn More", about_path, class: "btn btn-outline-primary btn-sm" %>
+
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+              <div class="card shadow-sm h-100 border-0">
+                <div class="card-body">
+                  <h5 class="card-title">📆 Weekly Schedule</h5>
+                  <p class="card-text">Find out what we’re learning this week and when to pack sneakers for gym class!</p>
+                  <%= link_to "View Schedule", schedule_path, class: "btn btn-outline-primary btn-sm" %>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-4 mb-4">
+              <div class="card shadow-sm h-100 border-0">
+                <div class="card-body">
+                  <h5 class="card-title">📸 Photo Gallery</h5>
+                  <p class="card-text">See snapshots of our classroom activities, crafts, and second grade adventures.</p>
+                  <%= link_to "See Photos", photos_path, class: "btn btn-outline-primary btn-sm" %>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <hr class="my-5">
+      
+          <div class="mt-4">
+            <h2 class="fw-bold text-success">💌 Stay Connected</h2>
+            <p class="text-muted">Have questions? Need to reach out? Click below to contact Ms.Fanelli .</p>
+            <%= link_to "Contact Me", "mailto:dummy@johnsadummyxyz.com", class: "btn btn-success btn-lg" %>
+
+          </div>
+        </div>
+      </div>
+      
+</body>
+</html>

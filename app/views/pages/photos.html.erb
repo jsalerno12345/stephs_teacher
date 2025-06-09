@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="min-vh-100 py-5" style="background-color: #fffaf4;">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold text-danger">📸 Our Class in Action</h1>
+            <p class="lead text-muted">Smiles, discoveries, messy crafts, and magical moments.</p>
+          </div>
+      
+          <div class="row g-4">
+            <% ["A_2D_digital_illustration_depicts_a_second-grade_c.png", "about-image.png", "paw-print.svg"].each do |img| %>
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm">
+                    <%= image_tag("gallery1.png", alt: "Classroom photo", class: "card-img-top rounded") %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+      
+          <div class="text-center mt-5">
+            <a href="/" class="btn btn-outline-danger">← Back to Home</a>
+          </div>
+        </div>
+      </div>
+      
+</body>
+</html>
