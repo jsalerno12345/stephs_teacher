@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: stephs-teacher-site
+    env: ruby
+    plan: free
+    buildCommand: |
+      apt-get update -qq && apt-get install -y libpq-dev
+      bundle install && bundle exec rake assets:precompile
+    startCommand: bundle exec rails server
