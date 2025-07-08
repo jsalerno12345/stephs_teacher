@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Our Class</title>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
 </head>
 <body>
-    <div class="min-vh-100 py-5" style="background-color: #fef6ef;">
-        <div class="container">
-          <div class="text-center mb-5">
-            <h1 class="display-5 fw-bold text-secondary">🍎 About Our Class</h1>
-            <p class="lead text-muted">A place where kindness blooms and every child shines bright 🌼</p>
-          </div>
-      
-          <div class="row align-items-center">
-            <div class="col-md-6 mb-4">
-              <%= image_tag("about_classroom.png", alt: "Cozy classroom scene", class: "img-fluid rounded shadow-sm") %>
-            </div>
-            <div class="col-md-6">
-              <div class="bg-white p-4 rounded shadow-sm">
-                <p>
-                  In our second-grade classroom, we believe every child is a little spark of magic — full of imagination, empathy, and potential. Each day is an opportunity to grow, explore, and cheer each other on.
-                </p>
-                <p>
-                  Our space is built on love, laughter, and learning — where reading circles turn into adventures, math becomes play, and every mistake is part of the journey. We lift each other up, celebrate the small wins, and always make room for giggles.
-                </p>
-                <p>
-                  Whether it’s story time on the rug, a science experiment, or dancing during brain breaks, we lead with joy and heart. 💛
-                </p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="text-center mt-5">
-            <a href="/" class="btn btn-outline-primary">← Back to Home</a>
+  <div class="min-vh-100 py-5" style="background-color: #fef6ef;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-secondary">🍎 About Our Class</h1>
+        <p class="lead text-muted">A place where kindness blooms and every child shines bright 🌼</p>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4">
+          <%= image_tag("about_classroom.png", alt: "Cozy classroom scene", class: "img-fluid rounded shadow-sm") %>
+        </div>
+        <div class="col-md-6">
+          <div class="bg-white p-4 rounded shadow-sm">
+            <% raw_content = AboutPage.first&.content %>
+            <% if raw_content.present? %>
+              <%= simple_format(raw_content) %>
+            <% else %>
+              <p>
+                In our second-grade classroom, we believe every child is a little spark of magic — full of imagination, empathy, and potential. Each day is an opportunity to grow, explore, and cheer each other on.
+              </p>
+              <p>
+                Our space is built on love, laughter, and learning — where reading circles turn into adventures, math becomes play, and every mistake is part of the journey. We lift each other up, celebrate the small wins, and always make room for giggles.
+              </p>
+              <p>
+                Whether it’s story time on the rug, a science experiment, or dancing during brain breaks, we lead with joy and heart. 💛
+              </p>
+            <% end %>
           </div>
         </div>
       </div>
-      
+
+      <div class="text-center mt-5">
+        <a href="/" class="btn btn-outline-primary">← Back to Home</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

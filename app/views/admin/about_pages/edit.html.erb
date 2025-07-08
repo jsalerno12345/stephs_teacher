@@ -1,0 +1,13 @@
+<div class="container py-4">
+    <h2>Edit “About Our Class”</h2>
+  
+    <%= form_with model: @about_page, url: admin_about_page_path, local: true do |f| %>
+      <div class="mb-3">
+        <%= f.label :content, "About Text" %>
+        <%= f.text_area :content, class: "form-control", rows: 10 %>
+      </div>
+  
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  

@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <h1>📅 Weekly Schedule</h1>
+    <p>This is the admin schedule index view. You can build out the list of time slots and editing features here.</p>
+  
+    <% @schedules.each do |schedule| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><%= schedule.day %></h5>
+          <p class="card-text"><%= schedule.time %></p>
+          <%= link_to "Edit", edit_admin_schedule_path(schedule), class: "btn btn-primary btn-sm" %>
+          <%= link_to "Delete", admin_schedule_path(schedule), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+  
+    <%= link_to "Add New Slot", new_admin_schedule_path, class: "btn btn-success mt-3" %>
+  </div>
+  
