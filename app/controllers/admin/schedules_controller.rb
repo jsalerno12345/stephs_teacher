@@ -1,6 +1,6 @@
 # app/controllers/admin/schedules_controller.rb
 module Admin
-  class Admin::DashboardController < Admin::BaseController
+  class SchedulesController < Admin::BaseController
     before_action :set_schedule, only: %i[edit update destroy]
 
     def index
