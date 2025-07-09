@@ -1,15 +1,15 @@
 module Admin
-  class AboutPagesController < ApplicationController
+  class AboutPagesController < Admin::BaseController
     def edit
-      @about_page = AboutPage.first_or_create
+      @about_page = AboutPage.instance
     end
 
     def update
-      @about_page = AboutPage.first
+      @about_page = AboutPage.instance
       if @about_page.update(about_page_params)
-        redirect_to edit_admin_about_page_path, notice: "Updated successfully!"
+        redirect_to admin_dashboard_path, notice: "About page updated!"
       else
-        render :edit, status: :unprocessable_entity
+        render :edit
       end
     end
 

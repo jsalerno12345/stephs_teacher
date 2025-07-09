@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<% if @photo.image.attached? %>
+  <div style="margin-bottom: 20px;">
+    <%= image_tag(@photo.image, style: "max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);") %>
+  </div>
+<% end %>
+
+<h2><%= @photo.title %></h2>
+
+<div>
+  <%= link_to "Edit this photo", edit_photo_path(@photo), class: "btn btn-outline-primary me-2" %>
+  <%= link_to "Back to photos", photos_path, class: "btn btn-outline-secondary me-2" %>
+  <%= button_to "Destroy this photo", @photo, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+</div>
